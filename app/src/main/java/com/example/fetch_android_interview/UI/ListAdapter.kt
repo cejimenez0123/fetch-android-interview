@@ -7,6 +7,7 @@ import com.example.fetch_android_interview.databinding.ListItemBinding
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import com.example.fetch_android_interview.data.models.ResponseList
 
 
 class ListAdapter():RecyclerView.Adapter<ListAdapter.ListItemViewHolder>() {
@@ -22,7 +23,10 @@ class ListAdapter():RecyclerView.Adapter<ListAdapter.ListItemViewHolder>() {
         val binding = ListItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return ListItemViewHolder(binding)
     }
-
+    fun setData(list: List<ResponseListItem>){
+        this.dataSet = list
+        notifyDataSetChanged()
+    }
     override fun getItemCount(): Int {
         return this.dataSet.size
     }
