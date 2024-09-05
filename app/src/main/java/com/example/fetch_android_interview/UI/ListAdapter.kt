@@ -1,14 +1,10 @@
 package com.example.fetch_android_interview.UI
 
-
 import androidx.recyclerview.widget.RecyclerView
 import com.example.fetch_android_interview.data.models.ResponseListItem
 import com.example.fetch_android_interview.databinding.ListItemBinding
-
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import com.example.fetch_android_interview.data.models.ResponseList
-
 
 class ListAdapter():RecyclerView.Adapter<ListAdapter.ListItemViewHolder>() {
     private var dataSet = listOf<ResponseListItem>()
@@ -26,6 +22,7 @@ class ListAdapter():RecyclerView.Adapter<ListAdapter.ListItemViewHolder>() {
     fun setData(list: List<ResponseListItem>){
         this.dataSet = list
         notifyDataSetChanged()
+        //Application updates the complete dataset, so use notifyDataSetChanged()
     }
     override fun getItemCount(): Int {
         return this.dataSet.size
